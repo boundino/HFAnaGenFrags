@@ -69,7 +69,7 @@ End
 			'HardQCD:all = on',
 			'PhaseSpace:pTHatMin = 5.',					 
 			'PhaseSpace:bias2Selection = on',
-            'PhaseSpace:bias2SelectionPow = 1.3',
+            'PhaseSpace:bias2SelectionPow = 5.',
             'PhaseSpace:bias2SelectionRef = 1'
 		),
         parameterSets = cms.vstring(
@@ -101,7 +101,7 @@ mumugenfilter = cms.EDFilter("MCParticlePairFilter",
 
 BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
 							  ParticleID = cms.untracked.int32(531),
-							  MomMinPt = cms.untracked.double(3.),
+							  MomMinPt = cms.untracked.double(0.),
 							  MomMinEta = cms.untracked.double(-2.5),
 							  MomMaxEta = cms.untracked.double(2.5),
 							  DaughterIDs = cms.untracked.vint32(443, 333),
@@ -115,7 +115,7 @@ BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
 
 BPhiDaufilter = cms.EDFilter("PythiaMomDauFilter",
 							 ParticleID = cms.untracked.int32(531),
-							 MomMinPt = cms.untracked.double(3.),
+							 MomMinPt = cms.untracked.double(0.),
 							 MomMinEta = cms.untracked.double(-2.5),
 							 MomMaxEta = cms.untracked.double(2.5),
 							 DaughterIDs = cms.untracked.vint32(443, 333),
