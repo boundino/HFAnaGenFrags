@@ -30,7 +30,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
             'HardQCD:all = on',
             'PhaseSpace:pTHatMin = 5.',
             'PhaseSpace:bias2Selection = on',
-            'PhaseSpace:bias2SelectionPow = 1.3',
+            'PhaseSpace:bias2SelectionPow = 5.',
             'PhaseSpace:bias2SelectionRef = 1'
             ),
 		parameterSets = cms.vstring(
