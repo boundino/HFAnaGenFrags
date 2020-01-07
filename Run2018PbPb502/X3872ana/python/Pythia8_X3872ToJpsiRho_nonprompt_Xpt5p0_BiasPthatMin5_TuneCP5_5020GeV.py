@@ -43,7 +43,7 @@ Enddecay
 Alias      myX(3872)  X_1(3872)
 # Alias      myX(3872)  X(3872)
 ChargeConj myX(3872)  myX(3872)
-Particle myX(3872) 3.87169 0.0001
+Particle myX(3872) 3.87169 0.0000001
 
 #
 Decay myX(3872)
@@ -101,7 +101,10 @@ End
 								 'HardQCD:gg2bbbar    = on ',
 								 'HardQCD:qqbar2bbbar = on ',
                                  'HardQCD:hardbbbar   = on',
-								 'PhaseSpace:pTHatMin = 30.',
+								 'PhaseSpace:pTHatMin = 5.',
+								 'PhaseSpace:bias2Selection = on',
+								 'PhaseSpace:bias2SelectionPow = 4.',
+								 'PhaseSpace:bias2SelectionRef = 5'
 							 ),
 							 parameterSets = cms.vstring(
 								 'pythia8CommonSettings',
@@ -132,7 +135,7 @@ mumugenfilter = cms.EDFilter("MCParticlePairFilter",
 
 BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
     ParticleID = cms.untracked.int32(9920443),
-    MomMinPt = cms.untracked.double(0.),
+    MomMinPt = cms.untracked.double(5.),
     MomMinEta = cms.untracked.double(-2.4),
     MomMaxEta = cms.untracked.double(2.4),
     DaughterIDs = cms.untracked.vint32(443, 113),
@@ -146,7 +149,7 @@ BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
 
 BX3872Daufilter = cms.EDFilter("PythiaMomDauFilter",
     ParticleID = cms.untracked.int32(9920443),
-    MomMinPt = cms.untracked.double(0.),
+    MomMinPt = cms.untracked.double(5.),
     MomMinEta = cms.untracked.double(-2.4),
     MomMaxEta = cms.untracked.double(2.4),
     DaughterIDs = cms.untracked.vint32(443, 113),

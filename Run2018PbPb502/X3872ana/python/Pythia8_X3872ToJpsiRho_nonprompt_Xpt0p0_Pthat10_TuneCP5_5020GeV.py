@@ -40,7 +40,7 @@ Decay Myrho0
 Enddecay
 #
 #
-Alias      myX(3872)  chi_c1
+Alias      myX(3872)  X_1(3872)
 # Alias      myX(3872)  X(3872)
 ChargeConj myX(3872)  myX(3872)
 Particle myX(3872) 3.87169 0.0001
@@ -131,7 +131,7 @@ mumugenfilter = cms.EDFilter("MCParticlePairFilter",
 )
 
 BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
-    ParticleID = cms.untracked.int32(20443),
+    ParticleID = cms.untracked.int32(9920443),
     MomMinPt = cms.untracked.double(0.),
     MomMinEta = cms.untracked.double(-2.4),
     MomMaxEta = cms.untracked.double(2.4),
@@ -145,7 +145,7 @@ BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
 )
 
 BX3872Daufilter = cms.EDFilter("PythiaMomDauFilter",
-    ParticleID = cms.untracked.int32(20443),
+    ParticleID = cms.untracked.int32(9920443),
     MomMinPt = cms.untracked.double(0.),
     MomMinEta = cms.untracked.double(-2.4),
     MomMaxEta = cms.untracked.double(2.4),
