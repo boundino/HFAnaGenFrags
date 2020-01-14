@@ -30,10 +30,10 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
         # pythia8PSweightsSettingsBlock,
 		processParameters = cms.vstring(            
 			'HardQCD:all = on',
-			'PhaseSpace:pTHatMin = 5.',					 
+			'PhaseSpace:pTHatMin = 4.',					 
 			'PhaseSpace:bias2Selection = on',
-            'PhaseSpace:bias2SelectionPow = 5.',
-            'PhaseSpace:bias2SelectionRef = 1'
+            'PhaseSpace:bias2SelectionPow = 3.',
+            'PhaseSpace:bias2SelectionRef = 1.'
 		),
         parameterSets = cms.vstring(
 			'pythia8CommonSettings',
@@ -64,7 +64,7 @@ mumugenfilter = cms.EDFilter("MCParticlePairFilter",
 
 BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
 							  ParticleID = cms.untracked.int32(511),
-							  MomMinPt = cms.untracked.double(2.),
+							  MomMinPt = cms.untracked.double(4.),
 							  MomMinEta = cms.untracked.double(-10000.),
 							  MomMaxEta = cms.untracked.double(10000.),
 							  DaughterIDs = cms.untracked.vint32(443, 313),
@@ -78,7 +78,7 @@ BJpsiDaufilter = cms.EDFilter("PythiaMomDauFilter",
 
 BKstarDaufilter = cms.EDFilter("PythiaMomDauFilter",
 							 ParticleID = cms.untracked.int32(511),
-							 MomMinPt = cms.untracked.double(2.),
+							 MomMinPt = cms.untracked.double(4.),
 							 MomMinEta = cms.untracked.double(-10000.),
 							 MomMaxEta = cms.untracked.double(10000.),
 							 DaughterIDs = cms.untracked.vint32(443, 313),
