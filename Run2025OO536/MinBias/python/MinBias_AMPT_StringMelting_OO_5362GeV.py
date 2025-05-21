@@ -13,21 +13,23 @@ amptStringMelting.alpha = cms.double(0.33)
 # 3mb xs
 amptStringMelting.mu = cms.double(2.265)
 
-generator = ExternalGeneratorFilter(cms.EDFilter("AMPTGeneratorFilter",
-                                                 amptStringMelting,
-                                                 firstEvent = cms.untracked.uint32(1),
-                                                 firstRun = cms.untracked.uint32(1),
-                                                 comEnergy = cms.double(5362.0),
-                                                 frame = cms.string('CMS'),                         
-                                                 proj = cms.string('A'),
-                                                 targ = cms.string('A'),
-                                                 iap  = cms.int32(16),
-                                                 izp  = cms.int32(8),
-                                                 iat  = cms.int32(16),
-                                                 izt  = cms.int32(8),
-                                                 bMin = cms.double(0),
-                                                 bMax = cms.double(30)
-))
+generator = ExternalGeneratorFilter(
+    cms.EDFilter("AMPTGeneratorFilter",
+                 amptStringMelting,
+                 firstEvent = cms.untracked.uint32(1),
+                 firstRun = cms.untracked.uint32(1),
+                 comEnergy = cms.double(5362.0),
+                 frame = cms.string('CMS'),                         
+                 proj = cms.string('A'),
+                 targ = cms.string('A'),
+                 iap  = cms.int32(16),
+                 izp  = cms.int32(8),
+                 iat  = cms.int32(16),
+                 izt  = cms.int32(8),
+                 bMin = cms.double(0),
+                 bMax = cms.double(15)
+    )
+)
 
 configurationMetadata = cms.untracked.PSet(
     version = cms.untracked.string('$Revision: 1.1$'),

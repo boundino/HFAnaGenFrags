@@ -16,7 +16,7 @@ generator = ExternalGeneratorFilter(
                  iat  = cms.int32(16),
                  izt  = cms.int32(8),
                  bMin = cms.double(0),
-                 bMax = cms.double(30)
+                 bMax = cms.double(15)
     )
 )
 

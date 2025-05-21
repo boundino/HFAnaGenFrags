@@ -133,7 +133,7 @@ generator = ExternalGeneratorFilter(
                  ),
                  cFlag = cms.int32(1),
                  bMin = cms.double(0),
-                 bMax = cms.double(30),
+                 bMax = cms.double(15),
                  bFixed = cms.double(0)
     )
 )
