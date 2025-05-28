@@ -6,14 +6,14 @@ generator = ExternalGeneratorFilter(
                  rotateEventPlane = cms.bool(True),
                  frame = cms.string('CMS     '),
                  targ = cms.string('A       '),
-                 izp = cms.int32(8),
-                 bMin = cms.double(0),
-                 izt = cms.int32(8),
+                 izt = cms.int32(2),
+                 iat = cms.int32(4),
                  proj = cms.string('A       '),
+                 izp = cms.int32(2),
+                 iap = cms.int32(4),
                  comEnergy = cms.double(5362.0),
-                 iat = cms.int32(16),
-                 bMax = cms.double(15),
-                 iap = cms.int32(16)
+                 bMin = cms.double(0),
+                 bMax = cms.double(15)
     )
 )
 
