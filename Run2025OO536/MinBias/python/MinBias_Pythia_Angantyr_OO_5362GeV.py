@@ -6,6 +6,7 @@ generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
     filterEfficiency = cms.untracked.double(1.0),
     pythiaHepMCVerbosity = cms.untracked.bool(False),
     comEnergy = cms.double(5362.),
+    HeavyIonInitialState = cms.PSet( ),
     PythiaParameters = cms.PSet(
         processParameters = cms.vstring(
             'Beams:idA = 1000080160',
