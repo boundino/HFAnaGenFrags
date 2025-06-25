@@ -11,16 +11,13 @@ generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
             'Beams:idA = 1000080160',
             'Beams:idB = 1000080160',
             'Beams:frameType = 1',
-            'Beams:eCM = 5362',
+            'Beams:eCM = 5362.',
             
             # MinBias events
             'SoftQCD:inelastic = on',
             
-            # HI Angatyr setup (https://www.pythia.org/latest-manual/htmldoc/examples/main422.html)
+            # HI Angatyr setup https://pythia.org/latest-manual/HeavyIons.html
             'HeavyIon:mode = 1',
-            'HeavyIon:SigFitErr = 0.02,0.02,0.1,0.05,0.05,0.0,0.1,0.0',
-            'HeavyIon:SigFitNGen = 20',
-            'HeavyIon:SigFitDefPar = 2.15,17.24,0.33',
             
             # Harmonic Oscillator Shell model (light ion geometry)
             'Angantyr:NucleusModelA = 3',
