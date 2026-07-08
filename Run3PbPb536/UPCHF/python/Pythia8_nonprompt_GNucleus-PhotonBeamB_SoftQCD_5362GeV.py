@@ -16,7 +16,7 @@ generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
                                         'PhaseSpace:pTHatMin = 0.',
                                         'PhotonParton:all = on',
                                         'MultipartonInteractions:pT0Ref = 3.0',
-                                        'PDF:beamB2gamma = on',# have the photon coming from beam B
+                                        'PDF:beamB2gamma = on', # have the photon coming from beam B
                                         'PDF:proton2gammaSet = 0',
                                         'PDF:pSet = LHAPDF6:EPPS21nlo_CT18Anlo_Pb208', # add nuclear modifications to beam A
                                         'PDF:gammaFluxApprox2bMin = 13.272',
@@ -28,10 +28,8 @@ generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
     )
 )
 
-
-
 partonfilter = cms.EDFilter("PythiaFilter",
-                                    ParticleID = cms.untracked.int32(5) #non-prompt
-                                    )
+    ParticleID = cms.untracked.int32(5) # non-prompt
+)
 
 ProductionFilterSequence = cms.Sequence(generator*partonfilter)
