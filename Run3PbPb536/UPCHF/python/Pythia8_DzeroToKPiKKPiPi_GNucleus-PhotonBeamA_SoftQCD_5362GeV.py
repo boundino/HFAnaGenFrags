@@ -13,9 +13,9 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
     PhotonFlux = PhotonFlux_PbPb,
     ExternalDecays = cms.PSet(
         EvtGen130 = cms.untracked.PSet(
-            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
+            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2020_NOLONGLIFE.DEC'),
             operates_on_particles = cms.vint32(),
-            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
+            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2020.pdl'),
             list_forced_decays = cms.vstring('myD0', 'myanti-D0'),
             user_decay_embedded = cms.vstring(
                 """
@@ -25,7 +25,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                 
                 Decay myD0
                 0.87701  K-      pi+  PHSP;
-                0.09069  K+      K-   PHSP;
+                0.09068  K+      K-   PHSP;
                 0.03231  pi+     pi-  PHSP;
                 Enddecay
                 CDecay myanti-D0
@@ -43,7 +43,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                                         'PhaseSpace:pTHatMin = 0.',
                                         'PhotonParton:all = on',
                                         'MultipartonInteractions:pT0Ref = 3.0',
-                                        'PDF:beamA2gamma = on',# have the photon coming from beam A
+                                        'PDF:beamA2gamma = on', # have the photon coming from beam A
                                         'PDF:proton2gammaSet = 0',
                                         'PDF:pSetB = LHAPDF6:EPPS21nlo_CT18Anlo_Pb208', # add nuclear modifications to beam B
                                         'PDF:gammaFluxApprox2bMin = 13.272',
@@ -56,12 +56,11 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 )
 
 generator.PythiaParameters.processParameters.extend(EvtGenExtraParticles)
-#Bypass concurrency check
+# Bypass concurrency check
 "_generator=cms.EDFilter fromGeneratorInterface.Core.ExternalGeneratorFilterimportExternalGeneratorFilter generator=ExternalGeneratorFilter(_generator)"
 
-
 D0filter = cms.EDFilter("PythiaFilter",
-                        ParticleID = cms.untracked.int32(421)
+    ParticleID = cms.untracked.int32(421)
 )
 
 ProductionFilterSequence = cms.Sequence(generator*D0filter)
